@@ -83,6 +83,8 @@ Some common commands:
 			/jade			// Compiles to ./public/
 				/templates	// Compiles to ./public/templates
 			/less			// Compiles to ./public/css
+				/main		// LESS files to compile to their own CSS files
+				/partials	// LESS files included by other files
 		/tests				// Unit tests live here
 		
 ## TODO
