@@ -12,7 +12,7 @@ In the spirit of being truly environment agnostic, I've included special instruc
 * [Platform.js](https://github.com/bestiejs/platform.js/) for platform detection.
 * [HTML5 Boilerplate](http://html5boilerplate.com/) (jade-ified) because of best practices and stuff.
 * [RequireJS](http://requirejs.org/) for AMD goodness.
-* [Fontstrap](https://github.com/gregoryloucas/Fontstrap) for classy icons.
+* [Fontstrap](https://github.com/gregoryloucas/Fontstrap) - a classy icon font, built for Bootstrap.
 
 ### Pre-Processors
 * [CoffeeScript](http://coffeescript.org/) because vanilla JavaScript is so 1994.

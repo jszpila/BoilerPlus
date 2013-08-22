@@ -1,0 +1,4 @@
+# Ignore everything in this directory - only check source files into source control. Keeping directory for structure's sake.
+*
+# Except this file
+!.gitignore
