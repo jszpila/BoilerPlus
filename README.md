@@ -69,22 +69,26 @@ Some common commands:
 
 ## Structure
 	root					// Execute your commands here 'n stuff
+		/config				// Karma config stuff
 		/public				// Web root; compile target for index.jade
 			/css			// LESS compilation target
 			/fonts			// Fonts live here, if you need them
 			/img			// Images live here
 			/js				// CoffeeScript compilation target
-			/templates		// Jade compilation target for non-index files
+			/partials		// Jade compilation target for non-index files
 			/vendor			// Contains third-party assets
 				/js
 				/css		
+				/fonts
 		/source				// Raw source files
 			/coffee			// Compiles to ./public/js
 			/jade			// Compiles to ./public/
-				/templates	// Compiles to ./public/templates
+				/partials	// Compiles to ./public/partials
 			/less			// Compiles to ./public/css
 				/main		// LESS files to compile to their own CSS files
 				/partials	// LESS files included by other files
-		/tests				// Unit tests live here
+		/test				// Tests live here
+			/e2e			// End-to-end tests
+			/unit			// Unit tests
 
 

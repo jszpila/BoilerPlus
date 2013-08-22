@@ -4,13 +4,13 @@
  *
  ***********************************************/
 
-var express = require("express"),
+var express = require('express'),
   restler = require('restler'),
   app = express(),
   port = 2000;
 
 // Keep node from complaining about the 404 on the fav icon
-app.get("/favicon.ico", function(req, res) {
+app.get('/favicon.ico', function(req, res) {
   res.writeHead(200, {'Content-Type': 'image/x-icon'} );
   res.end();
   return;
@@ -27,11 +27,11 @@ app.get('/test', function(req, res) {
 
 // Server config
 app.configure(function() {
-  console.info("Server started @ localhost:" + port);
+  console.info('Server started @ localhost:' + port);
   
   app.use(express.methodOverride());
   app.use(express.bodyParser());
-  app.use(express.static(__dirname + "/public"));
+  app.use(express.static(__dirname + '/app'));
   app.use(express.logger());
   app.use(express.errorHandler({
     dumpExceptions: true, 

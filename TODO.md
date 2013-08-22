@@ -4,7 +4,7 @@
 * Convert to coffeescript
 * Make copy-libs part of default task
 * Configure additional tasks  
-	* Copy bootstrap fonts to public/fonts
+	* Copy fonstrap assets to public/vendor/css, fonts
 	* karma  
 	* a few others
 
