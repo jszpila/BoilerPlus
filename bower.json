@@ -40,6 +40,7 @@
     "requirejs": "~2.1.8",
     "modernizr": "~2.6.2",
     "platform": "~1.0.0",
-    "bootstrap": "~3.0.0"
+    "bootstrap": "~3.0.0",
+    "Fontstrap": "gregoryloucas/Fontstrap"
   }
 }

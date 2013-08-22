@@ -1,5 +1,5 @@
 # BoilerPlus
-A fully-featured boilerplate for service-oriented web app front-ends. I couldn't find an easy way to configure proxies for Yeoman or Brunch projects, which really hampered my ability to develop service-oriented applications… so I cooked this up. By no means is it authoritative or comprehensive, but it includes a lot of the components I usually spend a fair amount of time tweaking and configuring whenever I spin up a new project.
+A fully-featured boilerplate for service-oriented web app front-ends. I couldn't find an easy way to configure proxies for [Yeoman](http://yeoman.io) or [Brunch](http://brunch.io/) projects, which really hampered my ability to develop service-oriented applications… so I cooked this up. By no means is it authoritative or comprehensive, but it includes a lot of the components I usually spend a fair amount of time tweaking and configuring whenever I spin up a new project.
 
 In the spirit of being truly environment agnostic, I've included special instructions for Mac and Windows platforms where applicable.
 
@@ -12,6 +12,7 @@ In the spirit of being truly environment agnostic, I've included special instruc
 * [Platform.js](https://github.com/bestiejs/platform.js/) for platform detection.
 * [HTML5 Boilerplate](http://html5boilerplate.com/) (jade-ified) because of best practices and stuff.
 * [RequireJS](http://requirejs.org/) for AMD goodness.
+* [Fontstrap](https://github.com/gregoryloucas/Fontstrap) for classy icons.
 
 ### Pre-Processors
 * [CoffeeScript](http://coffeescript.org/) because vanilla JavaScript is so 1994.
@@ -33,13 +34,12 @@ There are some other things going on behind the scenes; poke around to find out 
 ## Up and Running
 
     npm install					# pulls down NPM packages
-    nom install -g coffee		# installs CoffeeScript compiler
+    npm install -g coffee		# installs CoffeeScript compiler
     npm install -g grunt-cli	# installs Grunt's command-line interface    
 	npm install -g karma		# installs Karma
 	npm install -g bower		# installs Bower
 	bower install				# pulls down Bower packages
-	grunt copy-libs				# copies files from bower_components to vendor
-	grunt						# default task; performs initial build
+	grunt						# default task; performs initial build, copies libraries
 	
 _If you encounter any issues, try sudo._ 
 
@@ -86,11 +86,5 @@ Some common commands:
 				/main		// LESS files to compile to their own CSS files
 				/partials	// LESS files included by other files
 		/tests				// Unit tests live here
-		
-## TODO
-* Gruntfile:
-	* Convert to coffeescript
-	* Configure additional tasks  
-* Integrate H5BP
-* Find VS plugins
+
 
