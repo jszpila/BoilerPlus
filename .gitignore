@@ -1,0 +1,14 @@
+*.DS_Store
+*.sublime-project
+*.sublime-workspace
+*.css
+*.html
+*.js
+
+bower_components/
+node_modules/
+
+public/vendor/
+public/templates/
+public/js/
+public/css/

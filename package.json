@@ -1,0 +1,53 @@
+{
+  "name": "BoilerPlus",
+  "description": "A fully-featured boilerplate for service-oriented web app front-ends.",
+  "responsitory": "https://github.com/jszpila/BoilerPlus",
+  "version": "0.0.1",
+  "homepage": "https://github.com/jszpila/BoilerPlus",
+  "main": "public/index.html",
+  "author": {
+    "name": "Jan Szpila",
+    "homepage": "http://jszpila.me/",
+    "email": "jszpila@gmail.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jszpila/BoilerPlus"
+  },
+  "licenses": [
+    {
+      "type": "WTFPL",
+      "url": "https://github.com/jszpila/BoilerPlus/blob/master/LICENSE.md"
+    }
+  ],
+  "devDependencies": {
+    "bower": "~1.2.2",
+    "grunt": "~0.4.1",
+    "grunt-cli": "~0.1.9",
+    "grunt-contrib-jade": "~0.8.0",
+    "grunt-contrib-concat": "~0.3.0",
+    "grunt-contrib-uglify": "~0.2.2",
+    "grunt-contrib-watch": "~0.5.2",
+    "grunt-contrib-less": "~0.7.0",
+    "restler": "~2.0.1",
+    "coffee-script": "~1.6.3",
+    "grunt-contrib-coffee": "~0.7.0",
+    "grunt-shell": "~0.3.1",
+    "express": "~3.3.5",
+    "grunt-coffeelint": "0.0.7",
+    "grunt-lesslint": "~0.11.0",
+    "karma-script-launcher": "~0.1.0",
+    "karma-chrome-launcher": "~0.1.0",
+    "karma-firefox-launcher": "~0.1.0",
+    "karma-html2js-preprocessor": "~0.1.0",
+    "karma-jasmine": "~0.1.1",
+    "karma-requirejs": "~0.1.0",
+    "karma-coffee-preprocessor": "~0.1.0",
+    "karma-phantomjs-launcher": "~0.1.0",
+    "karma": "~0.10.1",
+    "grunt-karma": "~0.6.1",
+    "grunt-bower-requirejs": "~0.7.0",
+    "grunt-bower": "~0.6.1",
+    "grunt-contrib-copy": "~0.4.1"
+  }
+}

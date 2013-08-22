@@ -1,0 +1,45 @@
+{
+  "name": "BoilerPlus",
+  "description": "A fully-featured boilerplate for service-oriented web app front-ends.",
+  "responsitory": "https://github.com/jszpila/BoilerPlus",
+  "version": "0.0.1",
+  "homepage": "https://github.com/jszpila/BoilerPlus",
+  "main": "public/index.html",
+  "author": {
+    "name": "Jan Szpila",
+    "homepage": "http://jszpila.me/",
+    "email": "jszpila@gmail.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jszpila/BoilerPlus"
+  },
+  "licenses": [
+    {
+      "type": "WTFPL",
+      "url": "https://github.com/jszpila/BoilerPlus/blob/master/LICENSE.md"
+    }
+  ],
+  "keywords": [
+    "coffeescript",
+    "jade",
+    "less",
+    "angular",
+    "bootstrap",
+    "front-end",
+    "service-oriented"
+  ],
+  "engines": {
+    "node": "0.10.x",
+    "npm": "1.2.x"
+  },
+  "devDependencies": {
+    "jquery": "1.9.x",
+    "angular": "~1.0.7",
+    "angular-bootstrap": "~0.5.0",
+    "requirejs": "~2.1.8",
+    "modernizr": "~2.6.2",
+    "platform": "~1.0.0",
+    "bootstrap": "~3.0.0"
+  }
+}
