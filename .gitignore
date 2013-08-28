@@ -5,8 +5,8 @@
 bower_components/
 node_modules/
 
-public/*.html
-public/vendor/*.*
-public/templates/*.*
-public/js/*.*
-public/css/*.*
+app/*.html
+app/vendor/*.*
+app/partials/*.*
+app/js/*.*
+app/css/*.*
