@@ -32,16 +32,15 @@ There are some other things going on behind the scenes; poke around to find out 
 - [Node.js](http://nodejs.org/)
 
 ## Up and Running
+The following commands check out the repo to myProject, installs dependencies, performs the initial build, and start the server:
 
-    npm install					# pulls down NPM packages
-    npm install -g coffee		# installs CoffeeScript compiler
-    npm install -g grunt-cli	# installs Grunt's command-line interface    
-	npm install -g karma		# installs Karma
-	npm install -g bower		# installs Bower
-	bower install				# pulls down Bower packages
-	grunt						# default task; performs initial build, copies libraries
+	$ git clone https://github.com/jszpila/BoilerPlus myProject && cd myProject	$ sudo npm install -g coffee grunt-cli karma bower
+	$ npm install
+	$ bower install	
+	$ grunt
+	$ node server.js
 	
-_If you encounter any issues, try sudo._ 
+Open up a browser and go to localhost:2000 and you should see some stuff. Hooray!
 
 ## Server Configuration
 The only things that need to be changed are the route and URL for proxying requests. Of course, feel free to modify or add routes as you see fit.
