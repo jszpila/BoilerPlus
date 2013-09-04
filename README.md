@@ -58,47 +58,51 @@ Some common commands:
     grunt build		# builds files for deployment and copies to dist
 
 ## Structure      
-	BoilerPlus/				// Execute your commands here 'n stuff
-	  config/				// Karma config stuff
-	  dist/					// Production-ready files put here by grunt build
-	  app/					// Web root; compile target for index.jade
-	    css/				// LESS compilation target
-	    data/				// Dump for static JSON, XML, etc.
-	    fonts/				// Fonts live here, if you need them
-	    img/				// Images live here
-	    	app/			// I don't like having site/app icons at root
-	    js/					// CoffeeScript compilation target
-	    partials/			// Jade compilation target for non-index files
-	    vendor/				// Contains third-party assets
+	BoilerPlus/						// Execute your commands here 'n stuff
+	  config/						// Karma config stuff
+	    karma-2.2.conf.js			// End-to-end test config
+	    karma.conf.js				// Unit test config
+	  dist/							// Production-ready files; structure mimics app/
+	  app/							// Web root; compile target for index.jade
+	    css/						// LESS compilation target
+	    data/						// Dump for static JSON, XML, etc.
+	    fonts/						// Fonts live here, if you need them
+	    img/						// Images live here
+	      app/						// I don't like having site/app icons at root
+	        apple-touch-*-.png		// H5BP placeholder images for iOS devices
+	        favicon.ico				// H5BP placeholder favicon
+	    js/							// CoffeeScript compilation target
+	    partials/					// Jade compilation target for non-index files
+	    vendor/						// Contains third-party assets
 		  js/
 		  css/		
 		  fonts/
-		 humans.txt			// ♫ Getting to know all about you… ♫
-		 robots.txt			// You tell them robots
-	   source/				// Raw source files
-	     coffee/			// Compiles to ./app/js
-	   	   controllers/
-	   	   directives/
-	   	   filters/
-	   	   routes/
-	   	   services/
-	   	   views/
-	       app.coffee		// Main app logic
+		 humans.txt					// ♫ Getting to know all about you… ♫
+		 robots.txt					// You tell them robots
+	   source/						// Raw source files
+	     coffee/					// Compiles to app/js
+	   	   controllers/				// Controller modules
+	   	   directives/				// Directive modules
+	   	   filters/					// Filter modules
+	   	   routes/					// Route modules
+	   	   services/				// Service modules
+	   	   views/					// View modules
+	       app.coffee				// Main app logic
 		   require-config.coffee	// Require bootstrap config
-		 jade/				// Compiles to ./app
-		   partials/		// Compiles to ./app/partials
-		   index.jade
-		 less/				// Compiles to ./app/css
-		   main/			// LESS files that compile to their own CSS files
-		   partials/		// LESS files included by other files
-		   app.less
-		test/				// Tests live here
-		  e2e/				// End-to-end tests
-		  unit/				// Unit tests
-		bower.json			// Bower package info
-		Gruntfile.coffee	// Grunt configuration
-		package.json		// NPM package info
-		server.js			// Node server app
+		 jade/						// Compiles to app/
+		   partials/				// Compiles to app/partials
+		   index.jade				// App's primary markup file
+		 less/						// Compiles to app/css
+		   main/					// LESS files that compile to their own CSS files
+		   partials/				// LESS files included by other files
+		   app.less					// Main stylesheet
+		test/						// Tests live here
+		  e2e/						// End-to-end tests
+		  unit/						// Unit tests
+		bower.json					// Bower package info
+		Gruntfile.coffee			// Grunt configuration
+		package.json				// NPM package info
+		server.js					// Node server app
 		
 ## IDE Integration
 ### Sublime Text 
@@ -109,6 +113,7 @@ Some common commands:
 * [Jade Syntax Mode](https://github.com/miksago/jade-tmbundle) _TextMate bundle; requires manual installation_
 
 ### Visual Studio
-* [GruntLauncher](https://github.com/Bjornej/GruntLauncher) 
-* Jade?
-* CoffeeScript?
+* [GruntLauncher](https://github.com/Bjornej/GruntLauncher) - run grunt tasks from VS's context menu
+* Find something for VS Jade support
+* Find something for VS CoffeeScript support
+* Find something for including static files in project automatically
