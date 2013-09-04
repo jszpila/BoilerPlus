@@ -21,7 +21,7 @@ In the spirit of being truly environment agnostic, I've included special instruc
 
 ### Under the Hood
 * [Grunt](http://gruntjs.com/) for super-flexible task running.
-* [Karma](https://github.com/karma-runner/karma) for unit testing.
+* [Karma](https://github.com/karma-runner/karma) for testing all the things.
 * [Bower](https://github.com/bower/bower) and [NPM](https://npmjs.org/) because manually managing dependencies is for suckers.
 * [Node.js](http://nodejs.org/) (with [Express](http://expressjs.com/) and [Restler](https://github.com/danwrong/restler)) for development server and proxy functionality.
 
@@ -34,13 +34,16 @@ There are some other things going on behind the scenes; poke around to find out 
 ## Up and Running
 The following commands check out the repo to myProject, installs dependencies, performs the initial build, and start the server:
 
-	$ git clone https://github.com/jszpila/BoilerPlus myProject && cd myProject	$ sudo npm install -g coffee grunt-cli karma bower
+	$ git clone https://github.com/jszpila/BoilerPlus myProject && cd myProject  
+	$ sudo npm install -g coffee grunt-cli karma bower
 	$ npm install
 	$ bower install	
 	$ grunt
 	$ node server.js
 	
 Open up a browser and go to localhost:2000 and you should see some stuff. Hooray!
+
+__NOTE:__ if you're on Windows, you may need to use Git Bash.
 
 ## Server Configuration
 The only things that need to be changed are the route and URL for proxying requests. Of course, feel free to modify or add routes as you see fit.
@@ -50,9 +53,53 @@ Some common commands:
 
     node server.js 	# starts the development server
     grunt watch    	# builds project & reloads browser on file save
-    grunt test     	# runs unit tests
+    grunt test     	# runs tests (unit & e2e)
     grunt copy-libs	# copies files from bower_components to vendor 
+    grunt build		# builds files for deployment and copies to dist
 
+## Structure      
+	BoilerPlus/				// Execute your commands here 'n stuff
+	  config/				// Karma config stuff
+	  dist/					// Production-ready files put here by grunt build
+	  app/					// Web root; compile target for index.jade
+	    css/				// LESS compilation target
+	    data/				// Dump for static JSON, XML, etc.
+	    fonts/				// Fonts live here, if you need them
+	    img/				// Images live here
+	    	app/			// I don't like having site/app icons at root
+	    js/					// CoffeeScript compilation target
+	    partials/			// Jade compilation target for non-index files
+	    vendor/				// Contains third-party assets
+		  js/
+		  css/		
+		  fonts/
+		 humans.txt			// ♫ Getting to know all about you… ♫
+		 robots.txt			// You tell them robots
+	   source/				// Raw source files
+	     coffee/			// Compiles to ./app/js
+	   	   controllers/
+	   	   directives/
+	   	   filters/
+	   	   routes/
+	   	   services/
+	   	   views/
+	       app.coffee		// Main app logic
+		   require-config.coffee	// Require bootstrap config
+		 jade/				// Compiles to ./app
+		   partials/		// Compiles to ./app/partials
+		   index.jade
+		 less/				// Compiles to ./app/css
+		   main/			// LESS files that compile to their own CSS files
+		   partials/		// LESS files included by other files
+		   app.less
+		test/				// Tests live here
+		  e2e/				// End-to-end tests
+		  unit/				// Unit tests
+		bower.json			// Bower package info
+		Gruntfile.coffee	// Grunt configuration
+		package.json		// NPM package info
+		server.js			// Node server app
+		
 ## IDE Integration
 ### Sublime Text 
 * [Package Control](https://sublime.wbond.net/installation) _not required but highly recommended_
@@ -65,29 +112,3 @@ Some common commands:
 * [GruntLauncher](https://github.com/Bjornej/GruntLauncher) 
 * Jade?
 * CoffeeScript?
-
-## Structure
-	root					// Execute your commands here 'n stuff
-		/config				// Karma config stuff
-		/public				// Web root; compile target for index.jade
-			/css			// LESS compilation target
-			/fonts			// Fonts live here, if you need them
-			/img			// Images live here
-			/js				// CoffeeScript compilation target
-			/partials		// Jade compilation target for non-index files
-			/vendor			// Contains third-party assets
-				/js
-				/css		
-				/fonts
-		/source				// Raw source files
-			/coffee			// Compiles to ./public/js
-			/jade			// Compiles to ./public/
-				/partials	// Compiles to ./public/partials
-			/less			// Compiles to ./public/css
-				/main		// LESS files to compile to their own CSS files
-				/partials	// LESS files included by other files
-		/test				// Tests live here
-			/e2e			// End-to-end tests
-			/unit			// Unit tests
-
-
