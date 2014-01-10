@@ -4,13 +4,14 @@ A fully-featured boilerplate for service-oriented single-page applications. I co
 ## Features
 ### Frameworks, Libraries, Etc. 
 * [jQuery](http://jquery.com/), of course. 
-* [AngularJS](http://angularjs.org/) because all the cool kids are doing it.
+* [Knockout](http://knockoutjs.com/) for declarative-binding MVVM magic.
+* [Backbone.js](http://backbonejs.org/) because I couldn't find a better routing mechanism.
 * [Bootstrap](http://getbootstrap.com/2.3.2/) for responsiveness and widgets.
 * [Modernizr](http://modernizr.com/) for feature detection.
 * [Platform.js](https://github.com/bestiejs/platform.js/) for platform detection.
 * [HTML5 Boilerplate](http://html5boilerplate.com/) (jade-ified) because of best practices and stuff.
 * [RequireJS](http://requirejs.org/) for AMD goodness.
-* [Fontstrap](https://github.com/gregoryloucas/Fontstrap) - a classy icon font, built for Bootstrap.
+* [Font Awesome](http://fontawesome.io/) because everyone loves icon fonts.
 
 ### Processors
 #### Pre-processors
@@ -59,15 +60,16 @@ The only things that need to be changed are the route and URL for proxying reque
 Some common commands:
 
     node app.js 	# starts the development server
-    grunt watch    	# builds project & reloads browser on file save
+    grunt watch    	# builds project & reloads browser* on file save
     grunt copy-libs	# copies files from bower_components to vendor 
-    grunt clean-dev # deletes files in app/  
+    grunt clean-dev	# deletes files in app/  
     
 <!--
 	grunt test		# runs tests (unit & e2e)
 	grunt build		# performs release build to dist/
 -->
-    
+
+_&#42; assuming Live Reload is properly configured and working._
 
 ## Structure      
 	BoilerPlus/						// Execute your commands here 'n stuff

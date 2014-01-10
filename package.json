@@ -2,7 +2,7 @@
   "name": "BoilerPlus",
   "description": "A fully-featured boilerplate for service-oriented web app front-ends.",
   "responsitory": "https://github.com/jszpila/BoilerPlus",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "homepage": "https://github.com/jszpila/BoilerPlus",
   "main": "public/index.html",
   "author": {
