@@ -28,7 +28,7 @@ define [
     # Update the page's title
     # title - str - title to use for page
     setTitle = (title) ->
-      els.title.text 'UniB Admin / ' + title
+      els.title.text 'BoilerPlus / ' + title
 
     # Initialize the app
     init = () ->
