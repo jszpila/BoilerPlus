@@ -1,12 +1,10 @@
 # BoilerPlus
-A fully-featured boilerplate for service-oriented web app front-ends. I couldn't find an easy way to configure proxies for [Yeoman](http://yeoman.io) or [Brunch](http://brunch.io/) projects, which really hampered my ability to develop service-oriented applications… so I cooked this up. By no means is it authoritative or comprehensive, but it includes a lot of the components I usually spend a fair amount of time tweaking and configuring whenever I spin up a new project.
-
-In the spirit of being truly environment agnostic, I've included special instructions for Mac and Windows platforms where applicable.
+A fully-featured boilerplate for service-oriented single-page applications. I couldn't find an easy way to configure proxies for [Yeoman](http://yeoman.io) or [Brunch](http://brunch.io/) projects, which really hampered my ability to develop service-oriented applications… so I cooked this up. By no means is it authoritative or comprehensive, but it includes a lot of the components I usually spend a fair amount of time tweaking and configuring whenever I spin up a new project.
 
 ## Features
 ### Frameworks, Libraries, Etc. 
 * [jQuery](http://jquery.com/), of course. 
-* [AngularJS](http://angularjs.org/) - all the cool kids are doing it.
+* [AngularJS](http://angularjs.org/) because all the cool kids are doing it.
 * [Bootstrap](http://getbootstrap.com/2.3.2/) for responsiveness and widgets.
 * [Modernizr](http://modernizr.com/) for feature detection.
 * [Platform.js](https://github.com/bestiejs/platform.js/) for platform detection.
@@ -14,14 +12,17 @@ In the spirit of being truly environment agnostic, I've included special instruc
 * [RequireJS](http://requirejs.org/) for AMD goodness.
 * [Fontstrap](https://github.com/gregoryloucas/Fontstrap) - a classy icon font, built for Bootstrap.
 
-### Pre-Processors
+### Processors
+#### Pre-processors
 * [CoffeeScript](http://coffeescript.org/) because vanilla JavaScript is so 1994.
 * [LESS](http://lesscss.org/) because I don't feel like dealing with Ruby dependencies to compile CSS.
 * [Jade](http://jade-lang.com/) keeps the HTML nice and tidy.
 
+#### Post-processors
+* [Autoprefixer](https://github.com/ai/autoprefixer) because nuts to remembering vendor prefixes.
+
 ### Under the Hood
 * [Grunt](http://gruntjs.com/) for super-flexible task running.
-* [Karma](https://github.com/karma-runner/karma) for testing all the things.
 * [Bower](https://github.com/bower/bower) and [NPM](https://npmjs.org/) because manually managing dependencies is for suckers.
 * [Node.js](http://nodejs.org/) (with [Express](http://expressjs.com/) and [Restler](https://github.com/danwrong/restler)) for development server and proxy functionality.
 
@@ -31,19 +32,25 @@ There are some other things going on behind the scenes; poke around to find out 
 - [Git](http://git-scm.com/downloads)
 - [Node.js](http://nodejs.org/)
 
+## Recommended
+- [Chrome](https://www.google.com/intl/en/chrome/browser/)
+- [Live Reload Plugin](https://chrome.google.com/webstore/detail/livereload/jnihajbhpnppcggbcgedagnkighmdlei)
+- [Grunt Dev Tools Plugin](https://chrome.google.com/webstore/detail/grunt-devtools/fbiodiodggnlakggeeckkjccjhhjndnb?hl=en)
+
 ## Up and Running
 The following commands check out the repo to myProject, installs dependencies, performs the initial build, and start the server:
 
 	$ git clone https://github.com/jszpila/BoilerPlus myProject && cd myProject  
-	$ sudo npm install -g coffee grunt-cli karma bower
+	$ sudo npm install -g coffee grunt-cli karma bower grunt-devtools
 	$ npm install
 	$ bower install	
 	$ grunt
-	$ node server.js
+	$ node app.js
 	
-Open up a browser and go to localhost:2000 and you should see some stuff. Hooray!
+Open up a browser and go to [localhost:2000](http://localhost:2000) and you should see some stuff. Hooray!
 
-__NOTE:__ if you're on Windows, you may need to use Git Bash.
+__NOTE:__  
+If you're developing on Windows, you'll probably need to run the above commands using Git Bash.
 
 ## Server Configuration
 The only things that need to be changed are the route and URL for proxying requests. Of course, feel free to modify or add routes as you see fit.
@@ -51,58 +58,59 @@ The only things that need to be changed are the route and URL for proxying reque
 ## Usage
 Some common commands:
 
-    node server.js 	# starts the development server
+    node app.js 	# starts the development server
     grunt watch    	# builds project & reloads browser on file save
-    grunt test     	# runs tests (unit & e2e)
     grunt copy-libs	# copies files from bower_components to vendor 
-    grunt build		# builds files for deployment and copies to dist
+    grunt clean-dev # deletes files in app/  
+    
+<!--
+	grunt test		# runs tests (unit & e2e)
+	grunt build		# performs release build to dist/
+-->
+    
 
 ## Structure      
 	BoilerPlus/						// Execute your commands here 'n stuff
-	  config/						// Karma config stuff
-	    karma-2.2.conf.js			// End-to-end test config
-	    karma.conf.js				// Unit test config
 	  dist/							// Production-ready files; structure mimics app/
 	  app/							// Web root; compile target for index.jade
 	    css/						// LESS compilation target
-	    data/						// Dump for static JSON, XML, etc.
 	    fonts/						// Fonts live here, if you need them
 	    img/						// Images live here
-	      app/						// I don't like having site/app icons at root
-	        apple-touch-*-.png		// H5BP placeholder images for iOS devices
-	        favicon.ico				// H5BP placeholder favicon
 	    js/							// CoffeeScript compilation target
 	    partials/					// Jade compilation target for non-index files
 	    vendor/						// Contains third-party assets
 		  js/
 		  css/		
 		  fonts/
-		 humans.txt					// ♫ Getting to know all about you… ♫
-		 robots.txt					// You tell them robots
 	   source/						// Raw source files
 	     coffee/					// Compiles to app/js
-	   	   controllers/				// Controller modules
-	   	   directives/				// Directive modules
-	   	   filters/					// Filter modules
-	   	   routes/					// Route modules
-	   	   services/				// Service modules
-	   	   views/					// View modules
+		   models/					// Models go here
+		   viewmodels/				// Here there be view models
 	       app.coffee				// Main app logic
 		   require-config.coffee	// Require bootstrap config
+		   routes.coffee			// App router config
+		 img/						// Pretty pictures go here
+	      app/						// I don't like having site/app icons at root
+	        apple-touch-*-.png		// H5BP placeholder images for iOS devices
+	        favicon.ico				// H5BP placeholder favicon
 		 jade/						// Compiles to app/
 		   partials/				// Compiles to app/partials
 		   index.jade				// App's primary markup file
+		 meta/						// Info about your app
+		 	humans.txt				// ♫ Getting to know all about you… ♫
+		 	robots.txt				// You tell them robots
 		 less/						// Compiles to app/css
-		   main/					// LESS files that compile to their own CSS files
-		   partials/				// LESS files included by other files
-		   app.less					// Main stylesheet
+		 	main/					// LESS files that compile to their own CSS files
+		 		locale/			    // Locale-specific styles
+		 		app.less			// Main stylesheet
+		   	partials/			    // LESS files included by other files
 		test/						// Tests live here
 		  e2e/						// End-to-end tests
 		  unit/						// Unit tests
 		bower.json					// Bower package info
 		Gruntfile.coffee			// Grunt configuration
 		package.json				// NPM package info
-		server.js					// Node server app
+		app.js					    // Node server app
 		
 ## IDE Integration
 ### Sublime Text 
@@ -111,9 +119,3 @@ Some common commands:
 * [LESS Syntax Mode](https://github.com/danro/LESS-sublime)
 * [CoffeeScript Syntax Mode](https://github.com/Xavura/CoffeeScript-Sublime-Plugin)
 * [Jade Syntax Mode](https://github.com/miksago/jade-tmbundle) _TextMate bundle; requires manual installation_
-
-### Visual Studio
-* [GruntLauncher](https://github.com/Bjornej/GruntLauncher) - run grunt tasks from VS's context menu
-* Find something for VS Jade support
-* Find something for VS CoffeeScript support
-* Find something for including static files in project automatically

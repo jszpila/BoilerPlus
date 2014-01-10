@@ -34,13 +34,14 @@
     "npm": "1.2.x"
   },
   "devDependencies": {
-    "jquery": "1.9.x",
-    "angular": "~1.0.7",
-    "angular-bootstrap": "~0.5.0",
+    "jquery": "1.10.x",
     "requirejs": "~2.1.8",
     "modernizr": "~2.6.2",
     "platform": "~1.0.0",
     "bootstrap": "~3.0.0",
-    "Fontstrap": "gregoryloucas/Fontstrap"
+    "knockout": "~2.3.0",
+    "font-awesome": "~4.0.3",
+    "backbone": "~1.1.0",
+    "underscore": "~1.5.2"
   }
 }
