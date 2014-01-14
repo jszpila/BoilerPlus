@@ -7,21 +7,31 @@
 var http = require('http'),
   os = require('os'),
   express = require('express'),
-  httpProxy = require('http-proxy');
+  httpProxy = require('http-proxy'),
+  url = require('url'),
   app = express(),
   proxy = new httpProxy.RoutingProxy(),
-  port = 2000;
+  port = 2000,
+  remoteHost = {
+    route: '/api/*',
+    name: 'localhost',
+    port: 3000
+  }
 
 // Keep node from complaining about the 404 on the fav icon
-app.get('img/app/favicon.ico', function(req, res) {
+app.get('/img/app/favicon.ico', function(req, res) {
   res.writeHead(200, {'Content-Type': 'image/x-icon'} );
   res.end();
   return;
 });
 
-// Proxy requests to API
-app.all('/api/*', function(req, res) {
-  proxy.proxyRequest(req, res, {host: 'localhost', port: 3000});
+// Proxy requests
+app.all(remoteHost.route, function(req, res) {
+  proxy.proxyRequest(req, res, {
+    host: remoteHost.name, 
+    port: remoteHost.port,
+    enable: {xforward: true}
+  });
 });
 
 app.configure(function() {
@@ -40,7 +50,7 @@ app.configure(function() {
 
   app.use(app.router);
 
-  console.log('Server started @ ' + os.hostname() + ':' + app.get('port'));
+  console.log('Server started @ ' + os.hostname() + ':' + port);
 });
 
 app.listen(port);
