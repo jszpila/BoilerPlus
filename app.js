@@ -9,9 +9,9 @@ var express = require('express'),
 
 // test
 app.get('/test', function(req, res) {
-  console.log('what what');
+  console.log('GET /test');
 
-  var objToJson = {test: 'yo'};
+  var objToJson = {test: 'ok!'};
 
   res.writeHead(200, {"Content-Type": "text/html"});
   res.write(JSON.stringify(objToJson));

@@ -1,6 +1,6 @@
 ##########################################################################
 #
-# Module for index page
+# Module for test 2 page
 #
 ##########################################################################
 
@@ -16,12 +16,12 @@ define [
   ##############################
   # Members
   # Non-observable
-  title = 'Home'
+  title = 'Test 1'
   partial = 'partials/index.html'
 
   # Observable
-  helloTxt = ko.observable 'Hello World!'
-  loremTxt = ko.observable 'This is my web app. There are many like it but this one is mine.'
+  helloTxt = ko.observable 'Test 1'
+  loremTxt = ko.observable 'tower tank-traps convenience store math- drone computer decay dead garage semiotics tiger-team 8-bit stimulate.'
 
   # Methods
   # Initialize the view model
