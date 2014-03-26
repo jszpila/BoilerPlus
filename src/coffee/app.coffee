@@ -32,10 +32,9 @@ define [
 
     # Initialize the app
     init = () ->
-      # Configure global handler for authentication errors
-      $(document).ajaxError (event, jqxhr, settings, exception) ->
-        if jqxhr.status is 401
-          logOut()
+
+      $.get 'test', (res) ->
+        console.log res
 
       # Add browser and OS classes to assist in targeting fixes
       els.body.addClass platform.name.toLowerCase()

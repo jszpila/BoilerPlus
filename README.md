@@ -42,7 +42,7 @@ There are some other things going on behind the scenes; poke around to find out 
 The following commands check out the repo to myProject, installs dependencies, performs the initial build, and start the server:
 
 	$ git clone https://github.com/jszpila/BoilerPlus myProject && cd myProject  
-	$ sudo npm install -g coffee grunt-cli karma bower grunt-devtools
+	$ sudo npm install -g coffee grunt-cli bower grunt-devtools
 	$ npm install
 	$ bower install	
 	$ grunt
@@ -74,7 +74,7 @@ _&#42; assuming Live Reload is properly configured and working._
 ## Structure      
 	BoilerPlus/						// Execute your commands here 'n stuff
 	  dist/							// Production-ready files; structure mimics app/
-	  app/							// Web root; compile target for index.jade
+	  public/						// Web root; compile target for index.jade
 	    css/						// LESS compilation target
 	    fonts/						// Fonts live here, if you need them
 	    img/						// Images live here
@@ -84,7 +84,7 @@ _&#42; assuming Live Reload is properly configured and working._
 		  js/
 		  css/		
 		  fonts/
-	   source/						// Raw source files
+	   src/							// Raw source files
 	     coffee/					// Compiles to app/js
 		   models/					// Models go here
 		   viewmodels/				// Here there be view models
