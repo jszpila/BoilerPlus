@@ -36,13 +36,13 @@ define [
 
   # Update the page's navigation
   setNav = () ->
-    segment = document.URL.split('#')[1]
+    segment = document.URL.split('#')[1].split('/')[1]
     navItem = null
 
     if (els.curNav)
       els.curNav.removeClass 'active'
 
-    if (segment && segment is not '/')
+    if (segment)
       navItem = $('#' + segment)
       # split @ / to find sub-nav
       # set sub-nav

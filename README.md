@@ -2,10 +2,10 @@
 A fully-featured boilerplate for service-oriented single-page applications. I couldn't find an easy way to configure proxies for [Yeoman](http://yeoman.io) or [Brunch](http://brunch.io/) projects, which really hampered my ability to develop service-oriented applications… so I cooked this up. By no means is it authoritative or comprehensive, but it includes a lot of the components I usually spend a fair amount of time tweaking and configuring whenever I spin up a new project.
 
 ## Features
-### Frameworks, Libraries, Etc. 
-* [jQuery](http://jquery.com/), of course. 
+### Frameworks, Libraries, Etc.
+* [jQuery](http://jquery.com/), of course.
 * [Knockout](http://knockoutjs.com/) for declarative-binding MVVM magic.
-* [Backbone.js](http://backbonejs.org/) because I couldn't find a better routing mechanism.
+* [Director](https://github.com/flatiron/director) for lightweight, yet flexible, routing.
 * [Bootstrap](http://getbootstrap.com/2.3.2/) for responsiveness and widgets.
 * [Modernizr](http://modernizr.com/) for feature detection.
 * [Platform.js](https://github.com/bestiejs/platform.js/) for platform detection.
