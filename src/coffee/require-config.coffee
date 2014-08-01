@@ -8,7 +8,7 @@
 require.config
   paths:
     jquery:     '../vendor/js/jquery'
-    knockout:   '../vendor/js/knockout'
+    knockout:   '../vendor/js/knockout-latest.debug'
     backbone:   '../vendor/js/backbone'
     underscore: '../vendor/js/underscore'
     platform:   '../vendor/js/platform'

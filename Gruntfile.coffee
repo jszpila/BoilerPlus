@@ -2,6 +2,7 @@ module.exports = (grunt) ->
   require('load-grunt-config')(grunt,
     config:
       meta:
+        bower: 'bower_components'
         src:
           coffee: 'src/coffee'
           less:   'src/less'
@@ -39,7 +40,7 @@ module.exports = (grunt) ->
 
   registerTasks =
     'default':   ['jade:dev', 'less:dev', 'coffee:dev', 'imagemin:dev', 'shell:ko', 'copy-libs', 'autoprefixer:dev']
-    'copy-libs': ['bower:default', 'copy:css', 'copy:fonts', 'copy:meta', 'copy:img']
+    'copy-libs': ['copy:js', 'copy:css', 'copy:fonts', 'copy:meta', 'copy:img']
     'clean-dev': ['clean:dev']
     'server':    ['configureProxies:dev', 'connect:dev']
 
