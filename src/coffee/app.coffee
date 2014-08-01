@@ -7,18 +7,19 @@
 define [
   'jquery'
   'knockout'
-  'underscore'
-  'backbone'
+  'director'
+  'router'
   'platform'
-  'routes'
 ],
-($, ko, _, backbone, platform, routes) ->
+($, ko, director, router, platform) ->
   'use strict'
 
   ##############################
   # Private
   ##############################
-  router = new routes()
+  features  = ['localstorage', 'hashchange']
+  appTitle  = 'BoilerPlus'
+  delimiter = ' / '
   els =
     html: $('html')
     body: $('body')
@@ -27,13 +28,11 @@ define [
     main: $('#Main')
     curNav: $('#home')
 
-  features = ['localstorage', 'hashchange']
-
   ## Util
   # Update the page's title
   # title - str - title to use for page
   setTitle = (title) ->
-    els.title.text 'BoilerPlus / ' + title
+    els.title.text [appTitle, title].join delimiter
 
   # Update the page's navigation
   setNav = () ->
@@ -43,7 +42,7 @@ define [
     if (els.curNav)
       els.curNav.removeClass 'active'
 
-    if (segment)
+    if (segment && segment is not '/')
       navItem = $('#' + segment)
       # split @ / to find sub-nav
       # set sub-nav
@@ -77,10 +76,9 @@ define [
       # Add browser and OS classes to assist in targeting fixes
       els.body.addClass platform.name.toLowerCase()
       els.body.addClass platform.os.family.toLowerCase().replace(RegExp(' ', 'g'), '-')
-
-      Backbone.history.start()
+      router.init()
     else
-      # display message
+      alert 'Your browser does not support the following features:\n' + features.join '\n'
 
     # test request for proxy server
     # $.get '/test', (res) ->

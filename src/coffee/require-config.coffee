@@ -11,9 +11,9 @@ require.config
     knockout:   '../vendor/js/knockout'
     backbone:   '../vendor/js/backbone'
     underscore: '../vendor/js/underscore'
-    moment:     '../vendor/js/moment'
     platform:   '../vendor/js/platform'
     tbs:        '../vendor/js/bootstrap'
+    director:   '../vendor/js/director'
 
   shim:
     underscore:
@@ -25,8 +25,8 @@ require.config
       deps: ['jquery']
 
 # Start it up
-require ['app', 'jquery', 'tbs'], 
+require ['app', 'jquery', 'director', 'tbs'],
   (app, $) ->
     # Add global reference to app object
     window.app = window.app || app
-    app.init()  
+    app.init()

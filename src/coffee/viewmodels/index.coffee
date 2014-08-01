@@ -31,6 +31,9 @@ define [
     $.get partial, (html) ->
       app.setViewModel self, title, html
 
+  test = () ->
+    console.log this
+
   ##############################
   # Public
   ##############################
@@ -40,3 +43,4 @@ define [
 
   # Methods
   init: init
+  test: test

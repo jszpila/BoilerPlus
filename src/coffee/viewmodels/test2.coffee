@@ -25,8 +25,10 @@ define [
 
   # Methods
   # Initialize the view model
-  init = () ->
+  init = (param) ->
     self = this
+
+    loremTxt loremTxt() + ' ' + param
 
     $.get partial, (html) ->
       app.setViewModel self, title, html
